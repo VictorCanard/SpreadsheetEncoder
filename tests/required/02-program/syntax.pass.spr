@@ -1,0 +1,69 @@
+// comments within programs look like this line
+
+// assertions
+assert true
+assert 5 > 2
+
+// variable declarations
+// integers
+var foo: Int // initialised to 0
+assert foo == 0
+var bar: Int := 42 // initialised to 42
+assert bar == 42
+// Booleans
+var flag: Bool // initialised to false
+assert !flag
+
+// assignments
+foo := 5
+assert foo == 5
+flag := true
+assert flag
+
+// integer binary expressions
+foo := 1 + 2
+assert foo == 3
+foo := 2 * 3
+assert foo == 6
+foo := 3 - 4
+assert foo == -1
+foo := 4 / 5 // integer division is used: the result is 0 here
+assert foo == 0
+foo := 5 % 6
+assert foo == 5
+
+// Boolean expressions
+flag := foo < bar
+assert flag
+flag := foo > bar
+assert !flag
+flag := foo == bar
+assert !flag
+flag := foo != bar
+assert flag
+flag := flag && flag
+assert flag
+flag := flag || flag
+assert flag
+
+// unary expressions
+foo := -foo
+assert foo == -5
+flag := !flag
+assert !flag
+
+// expression grouping
+foo := (1 + 2) * (3 + 4)
+assert foo == 21
+
+// control flow
+if (true) {
+  foo := 42
+} else {
+  foo := 1337
+}
+assert foo == 42
+
+// program exit
+return 42
+return 72 // this statement is not executed, because of the previous line

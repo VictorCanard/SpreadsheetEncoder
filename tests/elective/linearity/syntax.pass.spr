@@ -1,0 +1,4 @@
+input true
+program {
+  return cell A1 % 2
+} linear

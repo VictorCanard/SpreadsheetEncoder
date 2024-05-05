@@ -1,0 +1,99 @@
+comment this (A1) is a comment cell
+
+comment below (A4..C4) is a row of constant cells
+const 42,const 72,const 1337
+
+comment below (A7) is a user input cell with no precondition
+input
+
+comment below (A10) is a user input cell with a precondition: the value is even
+input value % 2 == 0
+
+comment below (A13) is a program cell with no postcondition
+program { return 42 }
+
+comment below (A16) is a program cell with a postcondition: the value is odd.
+program { return 43 } ensures value % 2 == 1
+
+comment below (A19) is a larger program cell showcasing the program syntax
+program {
+  // comments within programs look like this line
+
+  // assertions
+  assert true
+  assert 5 > 2
+
+  // variable declarations
+  // integers
+  var foo: Int // initialised to 0
+  assert foo == 0
+  var bar: Int := 42 // initialised to 42
+  assert bar == 42
+  // Booleans
+  var flag: Bool // initialised to false
+  assert !flag
+
+  // assignments
+  foo := 5
+  assert foo == 5
+  flag := true
+  assert flag
+
+  // integer binary expressions
+  foo := 1 + 2
+  assert foo == 3
+  foo := 2 * 3
+  assert foo == 6
+  foo := 3 - 4
+  assert foo == -1
+  foo := 4 / 5 // integer division is used: the result is 0 here
+  assert foo == 0
+  foo := 5 % 6
+  assert foo == 5
+
+  // Boolean expressions
+  flag := foo < bar
+  assert flag
+  flag := foo > bar
+  assert !flag
+  flag := foo == bar
+  assert !flag
+  flag := foo != bar
+  assert flag
+  flag := flag && flag
+  assert flag
+  flag := flag || flag
+  assert flag
+
+  // unary expressions
+  foo := -foo
+  assert foo == -5
+  flag := !flag
+  assert !flag
+
+  // expression grouping
+  foo := (1 + 2) * (3 + 4)
+  assert foo == 21
+
+  // cell reading
+  foo := cell A4 // read a constant
+  assert foo == 42
+  foo := cell A10 // read user input
+  assert foo % 2 == 0
+  foo := cell A13 // read the output of a program cell
+  // assert foo == 42
+
+  // control flow
+  if (true) {
+    foo := 42
+  } elif (cell A4 == 2) {
+    foo := 72
+  } else {
+    foo := 1337
+  }
+  assert foo == 42
+
+  // program exit
+  return 42
+  return 72 // this statement is not executed, because of the previous line
+}

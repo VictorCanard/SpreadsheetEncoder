@@ -1,0 +1,33 @@
+test: 
+   (& x y z f. f x y z) ;; TRIPLE
+   (& x y z. x) ;; FIRST
+   (& x y z. y) ;; SECOND
+   (& x y z. z) ;; THIRD
+
+
+
+(& n.((n (& t. ((TRIPLE) ((t SECOND) (t THIRD) (+ (t FIRST) 1))) ((TRIPLE) 0 0 0)) FIRST))
+
+& num. 
+num 
+(& tr. 
+(& x y z f. f x y z)
+(tr (& x y z. y)) 
+(tr (& x y z. z)) 
+(& m. (& f x.m f f x)))
+tr (& x y z. x)
+((& x y z f. f x y z)(& f x. x)(& f x. x)(& f x. x))
+(& x y z. x)
+
+
+
+(& n.
+((n
+(& t.
+((& x y z f. f x y z)
+((t (& x y z. y)))
+((t (& x y z. z)))
+((& m. (& f x. f ((m f) x)))
+(t (& x y z. x)))))
+((& x y z f. f x y z) (& f x. x) (& f x. x) (& f x. x)))
+(& x y z. x)))

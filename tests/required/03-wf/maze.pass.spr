@@ -1,0 +1,6 @@
+input 0 <= value && value < 10
+program { return cell A1 },program { return cell B3 },program { return cell B2 },program { return cell C2 },program { return cell D2 }
+program { return cell A2 },program { return cell C3 },program { return cell D3 },program { return cell D4 },program { return cell E2 }
+program { return cell A3 },program { return cell A4 },program { return cell B4 },program { return cell D5 },program { return cell E3 }
+program { return cell A4 },program { return cell A5 },program { return cell C4 },program { return cell C5 },program { return cell E4 }
+program { return cell B6 },program { return cell B5 },program { return cell C5 },program { return cell E6 },program { return cell E5 }

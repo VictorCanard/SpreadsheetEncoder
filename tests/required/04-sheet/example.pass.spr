@@ -1,0 +1,12 @@
+const 42,program {
+  return cell A2 + cell A1
+} ensures value < 52,program {
+  var s: Int := 0
+  s := s + cell B1
+  s := s - cell B3
+  return s
+}
+input value < 10,comment hello world
+const 5,program {
+  return cell A2 + cell A3
+} ensures value < 15

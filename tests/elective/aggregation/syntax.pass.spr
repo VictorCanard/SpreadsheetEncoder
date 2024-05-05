@@ -1,0 +1,23 @@
+const 0
+const 42,const 72,const 1337
+program {
+  var foo: Int
+
+  // column/row reading and aggregation
+  // summation
+  foo := sum(range A2 C2)
+  assert foo == 1451
+  foo := sum(range A2 A2) // range of only one cell
+  assert foo == 42
+  foo := sum(range A2 A1) // range of zero(!) cells (result is 0)
+  assert foo == 0
+  //   (the range is interpreted as all cells where start <= pos <= end)
+  // product
+  // so out of foo is fine but input of the next one bl is wronnnnng WHY?
+  foo := product(range A2 C2)
+  assert foo == 4043088
+  foo := product(range A2 A1) // empty range again, result is 1
+  assert foo == 1
+
+  return 42
+}

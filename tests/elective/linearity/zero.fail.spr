@@ -1,0 +1,9 @@
+input true
+program {
+  var foo: Int
+  foo := foo + cell A1
+  foo := foo - cell A1
+  foo := foo + cell A1
+  foo := foo - cell A1
+  return foo
+} linear

@@ -1,0 +1,13 @@
+comment name,comment score
+comment Robert Floyd,input 0 <= value && value <= 10
+comment Donald Knuth,input 0 <= value && value <= 10
+comment Leslie Lamport,input 0 <= value && value <= 10
+comment Barbara Liskov,input 0 <= value && value <= 10
+comment Amir Pnueli,input 0 <= value && value <= 10
+
+comment student scores are in B2..B6
+comment sum in A10
+program { return sum(range B2 B6) } ensures 0 <= value && value <= 50
+
+comment average in A13
+program { return cell A10 / 5 } ensures 0 <= value && value <= 10

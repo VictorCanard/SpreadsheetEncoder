@@ -1,0 +1,12 @@
+input 0 <= value && value <= 1
+input value % 2 == 0,input value % 2 == 1
+program {
+  if (cell A1 == 0) {
+    return cell A2
+  } else {
+    return cell B2
+  }
+  // The postcondition of this program references another cell.
+  // This is allowed in the language, but only constant and input
+  // cells should be referenced this way.
+} ensures value % 2 == cell A1

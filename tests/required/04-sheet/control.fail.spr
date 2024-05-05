@@ -1,0 +1,9 @@
+input 0 <= value && value <= 1
+input value % 2 == 0,input value % 2 == 1
+program {
+  if (cell A1 == 0) {
+    return cell B2
+  } else {
+    return cell A2
+  }
+} ensures value % 2 == cell A1

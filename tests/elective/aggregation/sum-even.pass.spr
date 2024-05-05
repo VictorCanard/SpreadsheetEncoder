@@ -1,0 +1,6 @@
+input value % 2 == 0,input value % 2 == 0,input value % 2 == 0,input value % 2 == 0
+program {
+  var s: Int
+  s := sum(range A1 D1)
+  return s
+} ensures value % 2 == 0

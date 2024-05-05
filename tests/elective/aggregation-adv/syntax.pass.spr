@@ -1,0 +1,16 @@
+const 0
+const 42,const 72,const 1337
+program {
+  var foo: Int
+
+  // custom aggregation operator
+  //   argument 1: cell range
+  //   argument 2: initial value of accumulator
+  //   argument 3: operation to apply for each cell,
+  //               where `x` is the accumulator, `y` is the cell
+  foo := operate(range A2 C2, 5, x + y - 1)
+  //   expands to ((5 + A2 - 1) + B2 - 1) + C2 - 1
+  assert foo == 1453
+
+  return 42
+}

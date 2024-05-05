@@ -1,0 +1,12 @@
+program {
+  return 42
+} transparent,program {
+  return 42
+} ensures value == 42
+program {
+  var foo: Int := cell A1
+  assert foo == 42 // should pass, because A1 is marked transparent
+
+  foo := cell B1
+  assert foo == 42 // should pass, because B1 has a strong enough postcondition
+}

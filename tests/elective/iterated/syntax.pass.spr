@@ -1,0 +1,11 @@
+row(5, 0, x + 2)
+program {
+  // row(len, init, op) fills "len" cells in total, starting at the cell and
+  //   moving to the right. The value of the first cell is "init". Each next
+  //   cell has the value "op(x)", where "x" is the value of the previous cell.
+  assert cell A1 == 0
+  assert cell B1 == 2
+  assert cell C1 == 4
+  assert cell D1 == 6
+  assert cell E1 == 8
+}

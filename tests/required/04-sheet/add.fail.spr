@@ -1,0 +1,11 @@
+const 5,const 2
+input value < 10
+program {
+  var s: Int
+  s := cell A1 + cell A2
+  return s
+} ensures value > 15,program {
+  var s: Int
+  s := cell B1 + cell A2
+  return s
+} ensures value < 7

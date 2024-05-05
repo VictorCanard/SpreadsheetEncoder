@@ -1,0 +1,12 @@
+program {
+  return 42
+} ensures value >= 40 && value <= 45
+program {
+  var foo: Int := cell A1
+  assert foo == 42 // should fail, because the postcondition is too weak
+
+  // Note: the interpreter will not fail when running this test. At runtime,
+  //   the value 42 will always be obtained from running cell A1. However,
+  //   a modular verification approach should not be able to make this
+  //   assumption, as it depends on the exact implementation of cell A1.
+}

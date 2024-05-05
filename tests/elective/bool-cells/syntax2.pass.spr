@@ -1,0 +1,16 @@
+input bool value == true,input bool, input
+program bool {
+  return true
+} ensures value
+program bool {
+  var gr : Int := cell C1
+  var foo: Bool := cell A2
+  return !foo
+} ensures !value
+program bool {
+  if (cell A1) {
+    return false
+  } else {
+    return cell B1
+  }
+} ensures value == (!(cell A1) && cell B1)

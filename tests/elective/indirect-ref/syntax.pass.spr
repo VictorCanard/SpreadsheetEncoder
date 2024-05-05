@@ -1,0 +1,11 @@
+const 1,const 2,const 3
+const 4,const 5,const 6
+const 7,const 8,const 9
+input 0 <= value && value <= 2,input 0 <= value && value <= 2
+program {
+  decl A1, B1, C1
+  decl A2...
+  var x: Int := cell A4
+  var y: Int := cell B4
+  return indirect(B2, x - 1, y - 1)
+} ensures 1 <= value && value <= 9

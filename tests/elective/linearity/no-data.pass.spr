@@ -1,0 +1,7 @@
+input value == 0
+program {
+  // edge case: is this program affected by the cell A1, which can only have
+  //   one value? there is only one possible input, thus the property should
+  //   hold vacuously!
+  return cell A1
+} linear

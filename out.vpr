@@ -1,0 +1,38 @@
+// Input of type Bool : requires VBinaryOp (VVar "value") "==" VTrueLit
+
+// Input of type Bool
+
+// Input of type Int
+
+method mA2() returns (value: Bool)
+  ensures value
+{
+  value := true
+}
+
+method mA3() returns (value: Bool)
+  ensures (!value)
+{
+  var C1: Int
+  assume true
+  var gr: Int
+  gr := C1
+  var A2: Bool
+  assume A2
+  var foo: Bool
+  foo := A2
+  value := (!foo)
+}
+
+method mA4(A1: Bool, B1: Bool) returns (value: Bool)
+  requires (A1 == true)
+  requires B1
+  ensures (value == ((!A1) && B1))
+{
+  if (A1) {
+    value := false
+  } else {
+    value := B1
+  }
+}
+

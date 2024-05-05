@@ -1,0 +1,30 @@
+input 0 <= value && value <= 2
+input,input,input
+program {
+  if (cell A1 == 1) {
+    return cell B2
+  } else {
+    return cell B2 + cell B3
+  }
+},program {
+  if (cell A1 == 2) {
+    return cell C2
+  } else {
+    return cell C2 + cell C3
+  }
+},program {
+  if (cell A1 == 0) {
+    return cell A2
+  } else {
+    return cell A2 + cell A3
+  }
+}
+program {
+  if (cell A1 == 0) {
+    return cell A3
+  } elif (cell A1 == 1) {
+    return cell B3
+  } else {
+    return cell C3
+  }
+} ensures value == cell A2 + cell B2 + cell C2
